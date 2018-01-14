@@ -1,7 +1,7 @@
 <ul>
   <li><a href="#">Inicio</a></li>
   <li class="submenu">
-    <a href="#">Destinos<span><img src="" /></span></a>
+    <a href="#">Destinos</a>
     <ul class="children">
       <li><a href="#">Los Roques</a></li>
       <li><a href="#">Roraima</a></li>
