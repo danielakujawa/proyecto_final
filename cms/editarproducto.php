@@ -25,7 +25,7 @@
     <fieldset>
 
         <legend>Editar producto<?php echo $id ?></legend>
-        <label>Destino: </label> <input type="text" name="Destino"
+        <label>Destino: </label> <input type="text" name="destino"
             value="<?php echo $producto['destino'];?>"/><br/><br/>
 
             <label>Fecha: </label> <input type="text" name="fecha"

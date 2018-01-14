@@ -40,15 +40,22 @@ function listado_productos(){
 
 function anadir_productos($data){
 
-    move_uploaded_file($_FILES["imagen"]["tmp_name"],
-            "images/".$_FILES["imagen"]["name"]);
+    move_uploaded_file($_FILES["imagen_1"]["tmp_name"],
+            "../images/".$_FILES["imagen_1"]["name"]);
+    move_uploaded_file($_FILES["imagen_2"]["tmp_name"],
+            "../images/".$_FILES["imagen_2"]["name"]);
+    move_uploaded_file($_FILES["imagen_3"]["tmp_name"],
+            "../images/".$_FILES["imagen_3"]["name"]);
 
 
     $sql = "
             INSERT INTO
-            productos (titulo, texto, descripcion, imagen)
-            VALUES ('".$data["titulo"]."','".$data["texto"]."','".$data
-            ["descripcion"]."','images/".$_FILES["imagen"]["name"]."')"
+            productos (destino, fecha, capacidad, descripcion, informacion,
+            detalles, imagen_1, imagen_2, imagen_3)
+            VALUES ('".$data["destino"]."','".$data["fecha"]."','".$data
+            ["capacidad"]."','".$data["descripcion"]."','".$data["informacion"]."','".$data
+            ["detalles"]."','../images/".$_FILES["imagen_1"]["name"]."',
+            '../images/".$_FILES["imagen_2"]["name"]."','../images/".$_FILES["imagen_3"]["name"]."')"
             . "";
 
             mysql_query($sql);
@@ -72,20 +79,23 @@ function producto($id){
             return mysql_fetch_array($resultado);
 }
 
-
+/*Esta función solo está puesta para imagen_1 (NO FUNCIONA) pero debería ser también para
+imagen_2 e imagen_3*/
 function actualizar_productos($id, $data){
-    if($_FILES["imagen"]["name"] ){
+    if($_FILES["imagen_1"]["name"] ){
 
-        move_uploaded_file($_FILES["imagen"]["tmp_name"],
-            "images/".$_FILES["imagen"]["name"]);
+        move_uploaded_file($_FILES["imagen_1"]["tmp_name"],
+            "../images/".$_FILES["imagen_1"]["name"]);
 
         $sql = "
             UPDATE
                 productos
             SET
-                titulo='".$data["titulo"]."', texto='".$data["texto"]."', "
-                . "descripcion='".$data["descripcion"]."', "
-                . "imagen='images/".$_FILES["imagen"]["name"]."'
+                destino='".$data["destino"]."', fecha='".$data["fecha"]."', "
+                . "capacidad='".$data["capacidad"]."', descripcion='".$data["descripcion"]."', "
+                . "informacion='".$data["informacion"]."', "
+                . "detalles='".$data["detalles"]."', "
+                . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."',
 
             WHERE id = ".$id."
                                 ";
@@ -94,22 +104,27 @@ function actualizar_productos($id, $data){
     }else{
 
         $sql = "
-            UPDATE
-                productos
-            SET
-                titulo='".$data["titulo"]."', texto='".$data["texto"]."', "
-                . "descripcion='".$data["descripcion"]."'
 
-            WHERE id = ".$id."
-                                ";
+          UPDATE
+            productos
+        SET
+            destino='".$data["destino"]."', fecha='".$data["fecha"]."', "
+
+            . "capacidad='".$data["capacidad"]."', descripcion='".$data["descripcion"]."', "
+            . "informacion='".$data["informacion"]."', "
+            . "detalles='".$data["detalles"]."', "
+            . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."',
+
+        WHERE id = ".$id."
+                            ";
 
     }
 
-            mysql_query($sql);
-            header("Location: index_logado.php");
+    mysql_query($sql);
+    header("Location: index_logado.php");
+/* FIN imagen 1*/
 
 }
-
 
 function borrar_productos($id){
 

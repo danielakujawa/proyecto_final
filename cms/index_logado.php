@@ -17,7 +17,7 @@
         echo ("<tr>\n");
         echo ("\t <td>".$row["id"]."</td>\n");
         echo ("\t <td>".$row["destino"]."</td>\n");
-        echo ("\t <td class='btn'><a href='../detalleproducto."
+        echo ("\t <td class='btn'><a href='../public/detalle."
                 . "php?id=".$row["id"]."'><img src='../images/ver.png'></td>\n");
         echo ("\t <td class='btn'><a href='editarproducto."
                 . "php?id=".$row["id"]."'><img src='../images/editar.png'></td>\n");
