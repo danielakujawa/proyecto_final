@@ -1,12 +1,13 @@
 <ul>
-  <li>Inicio</li>
-  <li>Destinos
-    <ul>
-      <li>Destino 1</li>
-      <li>Destino 2</li>
-      <li>Destino 3</li>
+  <li><a href="#">Inicio</a></li>
+  <li class="submenu">
+    <a href="#">Destinos</a>
+    <ul class="children">
+      <li><a href="#">Los Roques</a></li>
+      <li><a href="#">Roraima</a></li>
+      <li><a href="#">Mérida</a></li>
     </ul>
   </li>
-  <li>Contacto</li>
-  <li>Login</li>
+  <li><a href="#">Contacto</a></li>
+  <li><a href="#">Login</a></li>
 </ul>

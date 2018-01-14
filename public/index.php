@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <script type="text/javascript" src="../scripts/jquery.js"></script>
-  <script type="text/javascript" src="../scripts/fecha.js"></script>
-  <script type="text/javascript" src="../scripts/tres_destinos.js"></script>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-</head>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="../scripts/fecha.js"></script>
+    <script type="text/javascript" src="../scripts/menu.js"></script>
+
+    <script type="text/javascript" src="../scripts/tres_destinos.js"></script>
+
+  </head>
 
 <body>
-<div class="wrapper">
-  <header class="principal">
-      <div class="nombre">
-        <?php include '../includes/header.php' ?>
+    <header>
+      <div class="menu_bar">
+        <a href="#" class="bt-menu nombre" style="text-decoration:none;"><span><img src="../images/menu.png" /></span><?php include '../includes/header.php' ?></a>
       </div>
-      <nav id="menu">
-        <?php include '../includes/navigation.php' ?>
+      <nav>
+        <div class="oculto-en-movil nombre">
+            <?php include '../includes/header.php' ?>
+        </div>
+        <div class="navi">
+          <?php include '../includes/navigation.php' ?>
+        </div>
       </nav>
     </header>
 
-<!-- Abajo: contenido exclusivo de cada página -->
+<!-- main: contenido exclusivo de cada página -->
   <main>
     <!-- INCIO tres destinos (derecha e izquierda) -->
     <div id="contenedor">
