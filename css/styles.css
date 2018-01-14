@@ -128,7 +128,53 @@ list-style:none;
 }
 /* END HOME: Tres destinos */
 
+/* DETALLE: Carrusel*/
+#visorFotos{
+    			position: relative;
+    			width: 500px;
+    			height: 200px;
+    			margin-left:auto;
+    			margin-right:auto;
+    			background-color: black;
+    			overflow: hidden;
+    		}
+    		#visorFotos img {
+    			width:100px;
+    			height: 100px;
+       		}
+    		#anterior{
+    			position: absolute;
+    			width: 10px;
+    			height: 200px;
+    			background-color: gray;
+    			text-align: center;
+    			cursor: pointer;
+    			z-index:1;
+    		}
+    		#siguiente{
+    			position: absolute;
+    			width: 10px;
+    			height: 200px;
+    			background-color: gray;
+    			text-align: center;
+    			top:0;
+    			cursor: pointer;
+    			left:490px;
+    			z-index:1;
+    		}
+    		#anterior:hover, #siguiente:hover{
+    			background-color: white;
+    		}
+    		#interna{
+    			position: absolute;
+    			z-index:0;
+    			top: 50px;
+    			left: 10px;
+    			width:1000px;
+    		}
+/* END DETALLE: Carrusel*/
 
+/* DETALLE: Tres Pestanas*/
 #contenedor{
   padding:30px;
 }
@@ -159,6 +205,8 @@ div img{
 #uno{
   top:3px;
 }
+/* END DETALLE Tres Pestañas*/
+
 
 footer{
   text-align: center;
