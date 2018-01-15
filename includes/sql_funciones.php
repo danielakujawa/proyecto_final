@@ -79,13 +79,18 @@ function producto($id){
             return mysql_fetch_array($resultado);
 }
 
-/*Esta función solo está puesta para imagen_1 (NO FUNCIONA) pero debería ser también para
-imagen_2 e imagen_3*/
+/* actualizar productos con imagen 1, 2 y 3 */
 function actualizar_productos($id, $data){
-    if($_FILES["imagen_1"]["name"] ){
+
+    if(($_FILES["imagen_1"]["name"]) or ($_FILES["imagen_2"]["name"]) or
+  ($_FILES["imagen_3"]["name"])){
 
         move_uploaded_file($_FILES["imagen_1"]["tmp_name"],
             "../images/".$_FILES["imagen_1"]["name"]);
+        move_uploaded_file($_FILES["imagen_2"]["tmp_name"],
+            "../images/".$_FILES["imagen_2"]["name"]);
+        move_uploaded_file($_FILES["imagen_3"]["tmp_name"],
+            "../images/".$_FILES["imagen_3"]["name"]);
 
         $sql = "
             UPDATE
@@ -95,11 +100,13 @@ function actualizar_productos($id, $data){
                 . "capacidad='".$data["capacidad"]."', descripcion='".$data["descripcion"]."', "
                 . "informacion='".$data["informacion"]."', "
                 . "detalles='".$data["detalles"]."', "
-                . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."',
+                . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."', "
+                . "imagen_2='../images/".$_FILES["imagen_2"]["name"]."', "
+                . "imagen_3='../images/".$_FILES["imagen_3"]["name"]."'
+
 
             WHERE id = ".$id."
                                 ";
-
 
     }else{
 
@@ -113,16 +120,19 @@ function actualizar_productos($id, $data){
             . "capacidad='".$data["capacidad"]."', descripcion='".$data["descripcion"]."', "
             . "informacion='".$data["informacion"]."', "
             . "detalles='".$data["detalles"]."', "
-            . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."',
+            . "imagen_1='../images/".$_FILES["imagen_1"]["name"]."', "
+            . "imagen_2='../images/".$_FILES["imagen_2"]["name"]."', "
+            . "imagen_3='../images/".$_FILES["imagen_3"]["name"]."'
 
         WHERE id = ".$id."
                             ";
 
     }
 
+
     mysql_query($sql);
     header("Location: index_logado.php");
-/* FIN imagen 1*/
+/* FIN actualizar productos con imagen 1, 2 y 3*/
 
 }
 
