@@ -8,9 +8,11 @@ include "../includes/control.php";
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/fontello.css">
 
-    <link rel="stylesheet" href="../css/styles.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+
     <script type="text/javascript" src="../scripts/fecha.js"></script>
     <script type="text/javascript" src="../scripts/menu.js"></script>
     <script type="text/javascript" src="../scripts/tabs.js"></script>
@@ -18,33 +20,38 @@ include "../includes/control.php";
   </head>
 
 <body onload="leeCookie();">
-
   <header>
-    <div class="menu_bar">
-      <a href="#" class="bt-menu nombre" style="text-decoration:none;"><span><img src="../images/menu.png" /></span><?php include '../includes/header.php' ?></a>
+    <div class="contenedor">
+      <h1>Vzlaneando</h1>
+      <input type="checkbox" id="btn-menu">
+      <label for="btn-menu" class="icon-menu"></label>
+      <nav class="menu">
+        <ul>
+          <li><a href="home.php">Inicio</a></li>
+          <li class="submenu"><a href="#">Destinos<span class="icon-angle-down"></span></a>
+            <ul>
+              <li><a href="detalle.php?id=1">Los Roques</a></li>
+              <li><a href="detalle.php?id=2">Mérida</a></li>
+              <li><a href="detalle.php?id=3">Monte Roraima</a></li>
+            </ul>
+          </li>
+          <li><a href="contacto.php">Contacto</a></li>
+          <li><a href="../cms/index.php">Login</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <div class="oculto-en-movil nombre">
-          <?php include '../includes/header.php' ?>
-      </div>
-      <div class="navi">
-        <?php include '../includes/navigation.php' ?>
-      </div>
-    </nav>
   </header>
 
-<!-- Abajo: contenido exclusivo de cada página -->
   <main>
+      <section id="bienvenidos" class="top-50">
+        <?php echo "<h2>" .$producto['destino']."</h2>";?>
+      </section>
+
     <div id="contenedor">
     <?php
         $id = $_GET["id"];
         $producto = detalle_producto($id);
     ?>
-
-    <?php echo "<h1>" .$producto['destino']."</h1>";?>
-    <h2>frase sobre el destino</h2>
-
-
 <!-- Carrusel -->
 <div id="visorFotos">
   <div id="anterior">&larr;</div>
@@ -125,13 +132,37 @@ include "../includes/control.php";
       <input type="submit" value="reservar" class="boton-enviar" required>
   </div>
 </form>
-
-
 <!--END formulario -->
-  </main>
-<!-- END contenido exclusivo de cada página -->
 
-  <footer><?php include '../includes/footer.php' ?></footer>
-</div>
+  <section id="info">
+    <h3>¡Conoce nuestros próximos destinos!</h3>
+    <div class="contenedor">
+        <div class="info-des">
+          <img src="../images/amazonas02.jpg" alt="">
+          <h4>Amazonas</h4>
+        </div>
+        <div class="info-des">
+          <img src="../images/chichirivichedelacosta01.jpg" alt="">
+          <h4>Chichiriviche de la Costa</h4>
+        </div>
+        <div class="info-des">
+          <img src="../images/gransabana01.jpg" alt="">
+          <h4>La Gran Sabana</h4>
+        </div>
+        <div class="info-des">
+          <img src="../images/margarita01.jpg" alt="">
+          <h4>Isla de Margarita</h4>
+        </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <?php include '../includes/footer.php' ?>
+    </div>
+  </footer>
+  <script src="../scripts/menu.js"></script>
 </body>
 </html>
