@@ -82,10 +82,52 @@ include "../includes/control.php";
 	</div>
 	<div id="contenidoTres" class="contenido">
 		<h1>Detalles</h1>
-		<?php echo $producto['detalles']; ?>
+		<?php echo
+     $producto['detalles']; ?>
 	</div>
 </div>
 <!-- END TRES PESTAÑAS -->
+
+<!--formulario -->
+
+<form class="formulario-registro" name="formulario" method="post" action="../cms/formulario.php">
+  <h2 class="formulario-titulo">Reserva tu cupo</h2>
+  <div class="contenedor-inputs">
+      <input name="nombre" type="text" placeholder="Nombre" class="input-48" required>
+      <input name="apellidos" type="text" placeholder="Apellidos" class="input-48" required>
+      <input name="email" type="text" placeholder="Email" class="input-100" required>
+      <input name="telefono" type="text" placeholder="Teléfono" class="input-100" required>
+      <label for="personas">¿Cuántas personas viajarán?</label>
+      <div class="select">
+        <select name="numero_personas" form="personas_formulario" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <input type="submit" value="reservar" class="boton-enviar" required>
+  </div>
+</form>
+
+
+<!--END formulario -->
   </main>
 <!-- END contenido exclusivo de cada página -->
 
