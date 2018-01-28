@@ -11,11 +11,11 @@
   justify-content: center;
 }
 
-.info-pet {
+.info-des {
   margin: 20px;
 }
 
-.info-pet img {
+.info-des img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
@@ -23,13 +23,13 @@
 }
 
 @media (min-width:480px) {
-  .info-pet {
+  .info-des {
     width: 40%;
   }
 }
 
 @media (min-width:1024px) {
-  .info-pet {
+  .info-des {
     width: auto;
   }
 }
