@@ -1,47 +1,58 @@
 /*Carrusel*/
 #visorFotos{
-    			position: relative;
-    			width: 500px;
-    			height: 200px;
-    			margin-left:auto;
-    			margin-right:auto;
-    			background-color: black;
-    			overflow: hidden;
-    		}
-    		#visorFotos img {
-    			width:100px;
-    			height: 100px;
-       		}
-    		#anterior{
-    			position: absolute;
-    			width: 10px;
-    			height: 200px;
-    			background-color: gray;
-    			text-align: center;
-    			cursor: pointer;
-    			z-index:1;
-    		}
-    		#siguiente{
-    			position: absolute;
-    			width: 10px;
-    			height: 200px;
-    			background-color: gray;
-    			text-align: center;
-    			top:0;
-    			cursor: pointer;
-    			left:490px;
-    			z-index:1;
-    		}
-    		#anterior:hover, #siguiente:hover{
-    			background-color: white;
-    		}
-    		#interna{
-    			position: absolute;
-    			z-index:0;
-    			top: 50px;
-    			left: 10px;
-    			width:1000px;
-    		}
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: black;
+	overflow: hidden;
+
+}
+#visorFotos img {
+	width: 1210px;
+	height: 300px;
+		}
+#anterior{
+	position: absolute;
+	width: 40px;
+	height: 300px;
+	background-color: #f44336;
+  color: #fff;
+	text-align: center;
+	cursor: pointer;
+	z-index:1;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#siguiente{
+	position: absolute;
+	width: 40px;
+	height: 300px;
+	background-color: #f44336;
+  color: #fff;
+	text-align: center;
+	top:0;
+	cursor: pointer;
+	right:0;
+	z-index:1;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#anterior:hover, #siguiente:hover{
+	background-color: #bf3228;
+}
+#interna{
+	position: absolute;
+	z-index:0;
+	top: 0;
+	left: 10px;
+	width: 1210px;
+}
 /* END Carrusel*/
 
 /* Tres Pestanas*/
@@ -68,6 +79,7 @@ div img{
   position:relative;
   background-color:#ffffff;
   margin-right:3px;
+  cursor: pointer;
 }
 #contenidoDos, #contenidoTres{
   display:none;

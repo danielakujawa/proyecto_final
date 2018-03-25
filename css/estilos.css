@@ -14,9 +14,14 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #333;
 }
 .top-50{
   margin-top: 50px;
+}
+a {
+  color: #f44336;
 }
 header {
   width: 100%;
