@@ -1,7 +1,10 @@
 <?php
 include "../includes/control.php";
 ?>
-
+<?php
+    $id = $_GET["id"];
+    $producto = detalle_producto($id);
+?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -41,28 +44,37 @@ include "../includes/control.php";
       </nav>
     </div>
   </header>
-
   <main>
-      <section id="bienvenidos" class="top-50">
-        <?php echo "<h2>" .$producto['destino']."</h2>";?>
-      </section>
+    <section id="banner">
+        <img src="<?php echo $producto['imagen_1']; ?>" />
+        <div class="contenedor">
+            <?php echo "<h2>" .$producto['destino']."</h2>";?>
+            <a href="#fecha">Más info +</a>
+        </div>
+    </section>
+
+    <section id="bienvenidos">
+        <h2>LOREM IPSUM</h2>
+        <P>Lorem ipsum dolor sit amet</P>
+    </section>
+
+    <section id="carrusel">
+      <div class="contenedor">
+        <div id="visorFotos">
+          <div id="anterior">&#xab;</div>
+            <div id="interna">
+              <img src="<?php echo $producto['imagen_1']; ?>" />
+              <img src="<?php echo $producto['imagen_2']; ?>" />
+              <img src="<?php echo $producto['imagen_3']; ?>" />
+            </div>
+          <div id="siguiente">&#xbb;</div>
+        </div>
+      </div>
+    </section>
+
 
     <div id="contenedor">
-    <?php
-        $id = $_GET["id"];
-        $producto = detalle_producto($id);
-    ?>
-<!-- Carrusel -->
-<div id="visorFotos">
-  <div id="anterior">&larr;</div>
-    <div id="interna">
-      <img src="<?php echo $producto['imagen_1']; ?>" />
-      <img src="<?php echo $producto['imagen_2']; ?>" />
-      <img src="<?php echo $producto['imagen_3']; ?>" />
-    </div>
-  <div id="siguiente">&rarr;</div>
-</div>
-<!-- End Carrusel -->
+
 
   <h2>Fecha</h2>
   <?php echo $producto['fecha']; ?>
@@ -96,7 +108,9 @@ include "../includes/control.php";
 <!-- END TRES PESTAÑAS -->
 
 <!--formulario -->
+<section id="formulario">
 
+</section>
 <form class="formulario-registro" name="formulario" method="post" action="../cms/formulario.php">
   <h2 class="formulario-titulo">Reserva tu cupo</h2>
   <div class="contenedor-inputs">

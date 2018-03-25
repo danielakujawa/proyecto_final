@@ -41,7 +41,6 @@ initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
           <div class="contenedor">
               <h2>Venezuelandiando</h2>
               <p>Excursiones por Venezuela</p>
-              <a href="#">Leer más</a>
           </div>
       </section>
 

@@ -1,35 +1,46 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <title>Prueba</title>
+    <title>Vzlaneando: Inicio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no,
 initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/fontello.css">
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="../scripts/fecha.js"></script>
   </head>
 
   <body>
     <header>
-      <div class= "contenedor">
-          <h1>Vzlaneando</h1>
-          <input type="checkbox" id="menu-bar">
-          <label class="icon-menu" for="menu-bar"></label>
-          <nav class="menu">
-              <a href="">Inicio</a>
-              <a href="">Destinos</a>
-              <a href="">Contacto</a>
-              <a href="">Login</a>
-          </nav>
+      <div class="contenedor">
+        <h1>Vzlaneando</h1>
+        <input type="checkbox" id="btn-menu">
+        <label for="btn-menu" class="icon-menu"></label>
+        <nav class="menu">
+          <ul>
+            <li><a href="home.php">Inicio</a></li>
+            <li class="submenu"><a href="#">Destinos<span class="icon-angle-down"></span></a>
+              <ul>
+                <li><a href="detalle.php?id=1">Los Roques</a></li>
+                <li><a href="detalle.php?id=2">Mérida</a></li>
+                <li><a href="detalle.php?id=3">Monte Roraima</a></li>
+              </ul>
+            </li>
+            <li><a href="contacto.php">Contacto</a></li>
+            <li><a href="../cms/index.php">Login</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main>
       <section id="banner">
-          <img src="../images/merida01.jpg">
+          <img src="../images/amazonas01.jpg">
           <div class="contenedor">
-              <h2>Mascotas y niños felices</h2>
-              <p>Cuál es la mejor mascota para usted?</p>
+              <h2>Venezuelandiando</h2>
+              <p>Excursiones por Venezuela</p>
               <a href="#">Leer más</a>
           </div>
       </section>
@@ -39,43 +50,41 @@ initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
           <P>Lorem ipsum dolor sit amet</P>
       </section>
 
-      <section id="blog">
-          <h3>Lo último de nuestro blog</h3>
+      <section id="destinos">
+          <h3>Nuestros destinos:</h3>
           <div class="contenedor">
               <article>
-                  <img src="../images/merida01.jpg"alt="">
-                  <h4>Destino uno</h4>
+                  <img src="../images/roques03.jpg"alt="">
+                  <h4><a href="#destino-seleccionado">Los Roques</a></h4>
               </article>
               <article>
-                  <img src="../images/roques01.jpg"alt="">
-                  <h4>Destino dos</h4>
+                  <img src="../images/roraima02.jpg"alt="">
+                  <h4><a href="#destino-seleccionado">Roraima</a></h4>
               </article>
               <article>
-                  <img src="../images/roraima01.jpg"alt="">
-                  <h4>Destino 3</h4>
+                  <img src="../images/merida02.jpg"alt="">
+                  <h4><a href="#destino-seleccionado">Mérida</a></h4>
               </article>
           </div>
       </section>
-
       <section id="info">
-          <h3>Para muchos de nosotros las Mascotas
-            no son simples compañeros, son mienbros de la familia</h3>
+          <h3>¡Conoce nuestros próximos destinos!</h3>
           <div class="contenedor">
               <div class="info-des">
-                <img src="../images/merida02.jpg" alt="">
-                <h4>Destinos</h4>
+                <img src="../images/amazonas02.jpg" alt="">
+                <h4>Amazonas</h4>
               </div>
               <div class="info-des">
-                <img src="../images/roques02.jpg" alt="">
-                <h4>Destinos</h4>
+                <img src="../images/chichirivichedelacosta01.jpg" alt="">
+                <h4>Chichiriviche de la Costa</h4>
               </div>
               <div class="info-des">
-                <img src="../images/roraima02.jpg" alt="">
-                <h4>Destinos</h4>
+                <img src="../images/gransabana01.jpg" alt="">
+                <h4>La Gran Sabana</h4>
               </div>
               <div class="info-des">
-                <img src="../images/merida03.jpg" alt="">
-                <h4>Destinos</h4>
+                <img src="../images/margarita01.jpg" alt="">
+                <h4>Isla de Margarita</h4>
               </div>
           </div>
       </section>
@@ -83,14 +92,9 @@ initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
     <footer>
       <div class="contenedor">
-          <p class="copy">My pets &copy; 2015</p>
-          <div class="sociales">
-            <a class="icon-facebook" href=""></a>
-            <a class="icon-twitter" href=""></a>
-            <a class="icon-instagram" href=""></a>
-            <a class="icon-googleplus" href=""></a>
-          </div>
+        <?php include '../includes/footer.php' ?>
       </div>
     </footer>
+    <script src="../scripts/menu.js"></script>
   </body>
 </html>

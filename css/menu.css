@@ -9,9 +9,6 @@ header label {
   display: none;
   margin: 6px 0;
 }
-.menu{
-  height: 100vh;
-}
 .menu ul {
   display: flex;
   list-style: none;
